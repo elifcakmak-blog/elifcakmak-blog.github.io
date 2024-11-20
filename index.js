@@ -21,11 +21,12 @@ app.use(
       scriptSrc: [
         "'self'", // Allow scripts from your own domain
         "https://vercel.live", // Allow scripts from Vercel
-        "https://trusted-cdn.com" // Add other trusted sources here as needed
+        "https://trusted-cdn.com"// Add other trusted sources here as needed
       ],
       styleSrc: [
         "'self'", // Allow styles from your own domain
-        "https://trusted-styles.com" // Add other trusted sources for styles if needed
+        "https://trusted-styles.com", // Add other trusted sources for styles if needed
+        "'nonce-uniqueNonce'"  // Replace 'uniqueNonce' dynamically
       ],
       imgSrc: ["'self'", "https://trusted-images.com"], // Allow images from your domain and trusted sources
       fontSrc: ["'self'"], // Only fonts from your site
@@ -54,6 +55,20 @@ app.get("/home", (req, res) => {
 
 // Routes
 app.use("/home", home);
+
+app.use((req, res, next) => {
+  res.locals.nonce = crypto.randomBytes(16).toString('base64');
+  next();
+});
+
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+      styleSrc: ["'self'", "https://trusted-styles.com", (req, res) => `'nonce-${res.locals.nonce}'`],
+    },
+  })
+);
 
 // Connection
 const port = process.env.PORT || 9001;
