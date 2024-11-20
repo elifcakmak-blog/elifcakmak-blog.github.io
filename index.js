@@ -25,6 +25,11 @@ app.use(
 // Body parsing middleware
 app.use(express.json());
 
+// Redirect from the root to /home
+app.get("/", (req, res) => {
+  res.redirect("/home"); // Redirects visitors to the /home path
+});
+
 // Routes
 app.use("/home", home);
 
