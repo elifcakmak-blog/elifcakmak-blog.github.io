@@ -1,0 +1,77 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and overall page styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* General container for content */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Link styles */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+}
+
+/* Header and Navigation Styles */
+header {
+    background-color: #222;
+    color: white;
+    padding: 15px 0;
+}
+
+nav a {
+    color: white;
+    padding: 10px;
+    margin: 0 15px;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+nav .cta {
+    background-color: #e86f30;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+/* Footer styles */
+footer {
+    background-color: #222;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer .social-links {
+    list-style: none;
+    padding: 0;
+}
+
+footer .social-links li {
+    display: inline;
+    margin: 0 10px;
+}
+
+footer .social-links a {
+    color: white;
+}

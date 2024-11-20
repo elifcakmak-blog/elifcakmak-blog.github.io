@@ -1,0 +1,48 @@
+/* Podcast Page Layout */
+.podcast-header {
+    background-color: #222;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.podcast-header h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.podcast-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.podcast-item {
+    background-color: #fff;
+    margin: 20px 0;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    text-align: center;
+}
+
+.podcast-item h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.podcast-item p {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.podcast-item a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e86f30;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 5px;
+}

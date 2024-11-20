@@ -1,0 +1,56 @@
+/* Hero Section */
+.hero {
+    background: #eef2f3;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.4em;
+    margin: 10px 0;
+}
+
+/* Featured Sections */
+.featured {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 40px 0;
+}
+
+.featured .item {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    text-align: center;
+}
+
+.featured .item h2 {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+}
+
+/* Footer Adjustments for Index Page */
+footer {
+    padding: 40px 0;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+}
+
+footer .social-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+footer .social-links li {
+    margin: 0 15px;
+}

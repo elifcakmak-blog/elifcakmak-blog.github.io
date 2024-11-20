@@ -1,0 +1,40 @@
+/* Header Styles */
+header {
+    background-color: #333;
+    padding: 20px;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo a {
+    color: white;
+    font-size: 1.8em;
+    text-decoration: none;
+}
+
+header .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+}
+
+header .nav-links li {
+    margin: 0 15px;
+}
+
+header .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+header .nav-links .cta {
+    background-color: #ff9800;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
