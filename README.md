@@ -1,2 +1,2 @@
-# elifcakmak-blog.github.io
+# elifcakmak
 Data Management &amp; Software Development Services
