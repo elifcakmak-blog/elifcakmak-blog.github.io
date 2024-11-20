@@ -1,6 +1,7 @@
 // Import packages
 const express = require("express");
 const helmet = require("helmet"); // Import helmet for security headers
+const path = require("path"); // Import path for directory management
 const home = require("./routes/home");
 
 // Middlewares
@@ -8,6 +9,9 @@ const app = express();
 
 // Set EJS as the view engine
 app.set("view engine", "ejs");
+
+// Explicitly set the views directory
+app.set("views", path.join(__dirname, "views"));
 
 // Use helmet to set security headers, including CSP
 app.use(
