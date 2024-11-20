@@ -36,6 +36,11 @@ app.get("/", (req, res) => {
   res.redirect("/home"); // Redirects visitors to the /home path
 });
 
+// Serve the home page
+app.get("/home", (req, res) => {
+  res.render("home", { title: "Elif Cakmak's Blog" }); // Passing title to EJS
+});
+
 // Routes
 app.use("/home", home);
 

@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 // GET Home Page
-router.get("/", (req, res) => {
+router.get("/home", (req, res) => {
   res.render("home", { title: "Welcome to Elif Cakmak's Blog" });
 });
 
