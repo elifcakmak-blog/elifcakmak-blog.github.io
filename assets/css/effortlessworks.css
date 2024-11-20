@@ -1,0 +1,49 @@
+/* effortlessworks.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #222;
+    padding: 1em;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1em;
+}
+
+.hero {
+    text-align: center;
+    padding: 5em 2em;
+    background: #eef2f3;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin: 1em 0;
+}
+
+/* Optional: CTA Button Styling */
+.cta-button {
+    color: white;
+    background-color: #007bff;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
