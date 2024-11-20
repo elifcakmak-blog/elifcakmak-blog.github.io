@@ -1,7 +1,7 @@
 // Import packages
 const express = require("express");
 const helmet = require("helmet"); // Import helmet for security headers
-const home = require("./routes/home");
+const home = require("routes/home");
 
 // Middlewares
 const app = express();
