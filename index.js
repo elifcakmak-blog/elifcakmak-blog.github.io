@@ -14,9 +14,16 @@ app.use(
   helmet.contentSecurityPolicy({
     directives: {
       defaultSrc: ["'self'"], // Only allow resources from your site
-      scriptSrc: ["'self'"], // Only scripts from your site
-      styleSrc: ["'self'"], // Only styles from your site
-      imgSrc: ["'self'"], // Only images from your site
+      scriptSrc: [
+        "'self'", // Allow scripts from your own domain
+        "https://vercel.live", // Allow scripts from Vercel
+        "https://trusted-cdn.com" // Add other trusted sources here as needed
+      ],
+      styleSrc: [
+        "'self'", // Allow styles from your own domain
+        "https://trusted-styles.com" // Add other trusted sources for styles if needed
+      ],
+      imgSrc: ["'self'", "https://trusted-images.com"], // Allow images from your domain and trusted sources
       fontSrc: ["'self'"], // Only fonts from your site
       connectSrc: ["'self'"], // Only connections from your site (e.g., AJAX requests)
       objectSrc: ["'none'"], // Disallow Flash and other plugins
