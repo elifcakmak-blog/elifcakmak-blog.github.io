@@ -6,6 +6,9 @@ const home = require("./routes/home");
 // Middlewares
 const app = express();
 
+// Set EJS as the view engine
+app.set("view engine", "ejs");
+
 // Use helmet to set security headers, including CSP
 app.use(
   helmet.contentSecurityPolicy({
@@ -21,6 +24,9 @@ app.use(
     },
   })
 );
+
+//Express to serve Static Files
+app.use(express.static('public'));
 
 // Body parsing middleware
 app.use(express.json());
