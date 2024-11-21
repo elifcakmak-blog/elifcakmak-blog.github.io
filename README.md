@@ -1,2 +1,2 @@
 # elifcakmak
-Personal Brand Website
+Personal Brand Website - Socials, Podcasts, Books, Apps, Newsletter
