@@ -2,6 +2,7 @@
 const express = require("express");
 const helmet = require("helmet"); // Import helmet for security headers
 const path = require("path"); // Import path for directory management
+const crypto = require("crypto"); // Import crypto for generating a nonce
 const home = require("./routes/home");
 
 // Middlewares
