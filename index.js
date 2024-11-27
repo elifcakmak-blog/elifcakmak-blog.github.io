@@ -1,9 +1,9 @@
-import express from "express"; // Import express
-import helmet, { contentSecurityPolicy } from "helmet"; // Import helmet for security headers
-import path from "path"; // Import path for directory management
-import { randomBytes } from "crypto"; // Import crypto for generating a nonce
-import home from "./routes/home"; // Import your home routes
-import { json } from "express"; // Import express's json() middleware
+import express from "express"; 
+import helmet, { contentSecurityPolicy } from "helmet"; 
+import path from "path"; 
+import { randomBytes } from "crypto"; 
+import home from "./routes/home.js"; // Make sure to use .js extension with ES modules
+import { json } from "express";
 
 // Initialize the express app
 const app = express();
@@ -18,21 +18,21 @@ app.set("views", path.join(__dirname, "views"));
 app.use(
   contentSecurityPolicy({
     directives: {
-      defaultSrc: ["'self'"], // Only allow resources from your site
+      defaultSrc: ["'self'"],
       scriptSrc: [
-        "'self'", // Allow scripts from your own domain
-        "https://vercel.live", // Allow scripts from Vercel
-        "https://trusted-cdn.com" // Add other trusted sources here as needed
+        "'self'", 
+        "https://vercel.live", 
+        "https://trusted-cdn.com"
       ],
       styleSrc: [
-        "'self'", // Allow styles from your own domain
-        "https://trusted-styles.com", // Add other trusted sources for styles if needed
+        "'self'", 
+        "https://trusted-styles.com",
       ],
-      imgSrc: ["'self'", "https://trusted-images.com"], // Allow images from your domain and trusted sources
-      fontSrc: ["'self'"], // Only fonts from your site
-      connectSrc: ["'self'"], // Only connections from your site (e.g., AJAX requests)
-      objectSrc: ["'none'"], // Disallow Flash and other plugins
-      upgradeInsecureRequests: [], // Force all resources to be loaded over HTTPS
+      imgSrc: ["'self'", "https://trusted-images.com"],
+      fontSrc: ["'self'"],
+      connectSrc: ["'self'"],
+      objectSrc: ["'none'"],
+      upgradeInsecureRequests: [],
     },
   })
 );
@@ -41,20 +41,15 @@ app.use(
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Body parsing middleware
-app.use(json()); // Use the express.json() middleware to parse JSON bodies
+app.use(json()); 
 
 // Redirect from the root to /home
 app.get("/", (req, res) => {
-  res.redirect("/home"); // Redirects visitors to the /home path
+  res.redirect("/home");
 });
 
-// Serve the home page
-app.get("/home", (req, res) => {
-  res.render("home", { title: "Elif Cakmak's Blog" }); // Passing title to EJS
-});
-
-// Use routes for home
-app.use("/home", home);
+// Use the routes for home
+app.use("/home", home);  // This will use the home router defined in home.js
 
 // Add a nonce for content security policy
 app.use((req, res, next) => {
