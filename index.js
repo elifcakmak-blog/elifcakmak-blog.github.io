@@ -2,7 +2,7 @@ import express from "express";
 import helmet, { contentSecurityPolicy } from "helmet"; 
 import path from "path"; 
 import { randomBytes } from "crypto"; 
-import home from "./routes/home.js"; // Make sure to use .js extension with ES modules
+import home from "./routes/home"; // Make sure to use .js extension with ES modules
 import { json } from "express";
 
 // Initialize the express app
